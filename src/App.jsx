@@ -1,12 +1,13 @@
-import { useState } from 'react'
+import BirthdayViewContainer from '../components/BirthdayViewContainer'
+import List from '../components/List'
+import data from '../components/data'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <div className="App">
-
+      <BirthdayViewContainer />
     </div>
   )
 }
