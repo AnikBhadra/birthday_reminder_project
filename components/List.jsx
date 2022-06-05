@@ -2,6 +2,7 @@ import React from 'react'
 import data from './data'
 
 const List = (props) => {
+    const data = props.people
     return (
         <>
             {data.map((people) => {
