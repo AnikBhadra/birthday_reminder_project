@@ -1,22 +1,25 @@
-import React from 'react'
+import { React, useState } from 'react'
 import List from './List'
 import data from './data'
 
 
 function BirthdayViewContainer() {
+    // create a state variable here
+    const [People, setPeople] = useState(data)
+    // this should clear all records
+    function clearAllRecords() {
+        setPeople([])
+    }
     return (
-        <div>
-            <main>
-                <section className="container">
-                    {/* Create a h3 element below*/}
-                    <h3>{data.length} Birthdays Today</h3>
-
-                    {/* pass data to list component */}
-                    <List people={data} />
-                </section>
-            </main>
-        </div>
-    );
+        <main>
+            <section className="container">
+                {/* change this to state variable data */}
+                <h3>{People.length} birthdays today</h3>
+                <List people={People} />
+                <button onClick={clearAllRecords}>Clear All</button>
+            </section>
+        </main>
+    )
 }
 
 export default BirthdayViewContainer
