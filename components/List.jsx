@@ -1,9 +1,16 @@
 import React from 'react'
+import data from './data'
 
-const List = () => {
+const List = (props) => {
     return (
         <>
-            <h2>list component</h2>
+            {data.map((people) => {
+                return (
+
+                    <h2>{people.name}</h2>
+                )
+            })}
+
         </>
     )
 }

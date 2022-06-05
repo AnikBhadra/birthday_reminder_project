@@ -1,5 +1,6 @@
 import React from 'react'
 import List from './List'
+import data from './data'
 
 
 function BirthdayViewContainer() {
@@ -8,8 +9,10 @@ function BirthdayViewContainer() {
             <main>
                 <section className="container">
                     {/* Create a h3 element below*/}
-                    <h3>0 birthdays today</h3>
-                    <List />
+                    <h3>{data.length} Birthdays Today</h3>
+
+                    {/* pass data to list component */}
+                    <List people={data} />
                 </section>
             </main>
         </div>
