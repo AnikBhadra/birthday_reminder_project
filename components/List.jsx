@@ -1,19 +1,21 @@
 import React from 'react'
-import data from './data'
 
+// accept props here
 const List = (props) => {
-    const data = props.people
-    return (
-        <>
-            {data.map((people) => {
-                return (
+    const { people } = props
+    // Map over prop "people" and code the right structure
 
-                    <h2>{people.name}</h2>
-                )
-            })}
-
-        </>
-    )
+    return people.map((person) => {
+        const { id, name, age, image } = person
+        return (<article key={id} class="person">
+            <img src={image} alt={name} />
+            <div>
+                <h4>{name}</h4>
+                <p>{age}</p>
+            </div>
+        </article>)
+    })
 }
 
 export default List
+
